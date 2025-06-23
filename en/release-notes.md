@@ -1,5 +1,8 @@
 ## Dev Tools > Pipeline > Release Notes
 
+### June 24, 2025
+* **Build - NHN Cloud Build Tool** stage is being faded out.
+
 ### March 25, 2025
 * **Pipeline Notifications** feature has been added.
     * You can receive Email and SMS notifications when a pipeline starts, completes, or fails.
