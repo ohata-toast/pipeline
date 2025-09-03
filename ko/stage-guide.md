@@ -311,6 +311,7 @@ ${env}
         - 8-4-4-4-12 하이픈 표기(총 36자)의 표준 문자열을 가지는 **버전 4(UUID v4)** 를 생성합니다.
     - 사용자 입력 값
         - 변수에 사용할 값을 직접 입력하여 고정값처럼 사용할 수 있습니다.
+![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
 
 #### 기능 - 이미지 취약점 분석
 이미지를 대상으로 취약점 분석을 수행하는 스테이지입니다.
@@ -319,7 +320,11 @@ ${env}
     - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_3)를 선택할 수 있습니다.
 - **이미지 이름**과 **태그**를 입력하여 분석할 이미지를 지정합니다.
 
+![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
+
 이미지 취약점 분석 결과는 스테이지 실행 결과에서 확인할 수 있으며, 취약점이 발견된 경우 분석 결과에 상세 정보가 표시됩니다.
+
+![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
 
 ### 스테이지 공통 기능
 #### 스테이지 실패 시
