@@ -272,6 +272,74 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
+#### 기능 - 변수 생성
+파이프라인 내에서 이후 스테이지에서 재사용할 변수를 정의합니다. 이 스테이지에서 만든 변수는 연결된 모든 후속 스테이지에서 사용할 수 있습니다.
+이 스테이지에서는 변수를 최대 5개까지 생성할 수 있습니다.
+
+**변수 사용 방법**
+- 파이프라인 표현식으로 참조합니다.
+- (예시) 변수 이름이 env인 경우:
+```
+${env}
+```
+> 실제 사용 시 변수 이름은 스테이지에서 지정한 값으로 바꿔 쓰세요. (예: `${buildTag}`, `${imageName}`)
+
+- 변수 유형별 설정 및 예시
+    - 자동 실행 이미지 정보
+        - 파이프라인에 **이미지 저장소** 유형으로 **자동 실행** 되었을 때, 이미지 정보를 사용할 수 있습니다.
+        - 이미지 타입
+            - 전체 이미지 이름 (이미지 Repo 포함)
+                - 예: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name:tag`
+            - 이미지 이름
+                - 예: `dd530b18-kr1-registry.container.nhncloud.com/pipeline-test/image-name`
+            - 이미지 태그
+                - 예: `tag`
+        - 기본값
+            - 자동 실행(이미지 저장소 유형)으로 시작되지 않았을 때 사용할 대체 값을 지정합니다.
+    - Judgement(실행 관리) 선택 값
+        - 연결된 **기능 - Judgement(실행 관리)** 스테이지에서 **선택한 값**을 변수로 참조합니다.
+        - Judgement 스테이지 이름
+            - 이 스테이지와 연결된 **기능 - Judgement(실행 관리)** 스테이지 이름을 선택합니다.
+    - 생성형 날짜 문자열
+        - **기능 - 변수 생성** 스테이지가 실행된 시점을 기준으로 날짜 문자열을 생성합니다.
+        - 날짜 포맷
+            - `java.text.SimpleDateFormat` 규칙을 사용합니다.
+            - 생성 예
+              - 포맷: `yyyyMMddhhmmss`
+              - 결과: `20250903113846`
+    - Random UUID
+        - 8-4-4-4-12 하이픈 표기(총 36자)의 표준 문자열을 가지는 **버전 4(UUID v4)** 를 생성합니다.
+    - 사용자 입력 값
+        - 변수에 사용할 값을 직접 입력하여 고정값처럼 사용할 수 있습니다.
+![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
+
+#### 기능 - 이미지 취약점 분석
+이미지를 대상으로 취약점 분석을 수행하는 스테이지입니다.
+
+- 이미지 저장소
+    - **환경 설정**의 **이미지 저장소 설정**에서 추가한 [이미지 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_3)를 선택할 수 있습니다.
+- **이미지 이름**과 **태그**를 입력하여 분석할 이미지를 지정합니다.
+
+![stage-guide-23](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-23.png)
+
+이미지 취약점 분석 결과는 스테이지 실행 결과에서 확인할 수 있으며, 취약점이 발견된 경우 분석 결과에 상세 정보가 표시됩니다.
+
+![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
+
+#### 기능 - 소스 코드 취약점 분석
+
+소스 코드를 대상으로 취약점 분석을 수행하는 스테이지입니다.
+
+- 소스 저장소
+  - **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다.
+- **브랜치**를 선택하여 분석할 소스 코드를 지정합니다.
+
+![stage-guide-25](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-25.png)
+
+소스 코드 취약점 분석 결과는 스테이지 실행 결과에서 확인할 수 있으며, 취약점이 발견된 경우 분석 결과에 상세 정보가 표시됩니다.
+
+![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
+
 ### 스테이지 공통 기능
 #### 스테이지 실패 시
 
