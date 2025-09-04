@@ -16,29 +16,29 @@
 - **배포**
 - **기능**
 
-### 소스
+## 소스
 빌드할 소스 코드를 가져오는 스테이지입니다.
 
-#### 소스 - GitHub
+### 소스 - GitHub
 **소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다. 
 
 ![stage-guide-02](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-02_new.png)
 
-#### 소스 - GitLab
+### 소스 - GitLab
 **소스 저장소**는 **환경 설정**의 **소스 저장소 설정**에서 추가한 [소스 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_2)를 선택할 수 있습니다. **브랜치**에는 빌드할 대상의 소스 브랜치를 입력합니다.
 
 ![stage-guide-03](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-03_new.png)
 
-### 빌드
+## 빌드
 빌드를 하는 스테이지입니다.
 
-#### 빌드 - Jenkins
+### 빌드 - Jenkins
 사용자가 직접 구성한 Jenkins를 이용하여 빌드할 수 있습니다. **빌드 도구**는 **환경 설정**의 **빌드 도구 설정**에서 추가한 [빌드 도구](/Dev%20Tools/Pipeline/ko/environment-config/#_4)를 선택할 수 있습니다. **빌드 잡**을 선택할 수 있습니다.
 **아티팩트**의 **시작 조건**과 **종료 조건**을 설정할 수 있습니다. **시작 조건**을 설정하여 스테이지 시작 여부를 결정할 수 있습니다. **종료 조건**을 설정하여 스테이지의 생성물을 아티팩트로 설정할 수 있습니다.
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
-#### 빌드 - Bake (Manifest)
+### 빌드 - Bake (Manifest)
 사용자가 직접 구성한 Helm package file 또는 [차트 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_6)를 이용하여 빌드할 수 있습니다.
 
 - 차트 이름은 Helm 엔진으로 구성한 결과물의 이름을 설정합니다.
@@ -65,7 +65,7 @@
 
 ![stage-guide-05](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-10-29/stage-guide-05-1.png)
 
-#### 빌드 - NHN Cloud 빌드 도구 v2
+### 빌드 - NHN Cloud 빌드 도구 v2
 NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 
 - 빌드 환경 설정
@@ -91,10 +91,10 @@ NHN Cloud에서 제공하는 빌드 도구를 사용할 수 있습니다.
 
 ![stage-guide-06](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-06_new.png)
 
-### 배포
+## 배포
 Kubernetes 환경에 배포를 하는 스테이지입니다.
 
-#### 배포 - Deploy
+### 배포 - Deploy
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 **스테이지 이름**, **배포 대상**, 배포에 사용할 **Manifest**를 입력합니다.
 빌드 스테이지에서 태그 포맷을 사용한 경우 **Manifest**의 도커 이미지 태그 부분을 `_{BUILD_NUMBER}`로 입력하면 태그 포맷으로 빌드된 이미지 중 가장 최근 번호의 이미지로 배포할 수 있습니다.
@@ -106,7 +106,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-07](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-07_new.png)
 
-#### 배포 - Patch
+### 배포 - Patch
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, 배포에 사용할 **Manifest**를 입력합니다. Patch로 기존 리소스의 정보를 수정할 수 있습니다.
 - **Manifest**를 작성하는 방법은 [Kubernetes 문서](https://kubernetes.io/docs/reference/kubectl/cheatsheet/#patching-resources)를 참고하십시오.
@@ -122,7 +122,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-08](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-08_new.png)
 
-#### 배포 - Scale
+### 배포 - Scale
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**, **Replicas**를 입력합니다. Scale로 Replicas를 수정할 수 있습니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
@@ -137,13 +137,13 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-09](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-09_new.png)
 
-#### 배포 - Rollout undo
+### 배포 - Rollout undo
 **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 **Namespace**, **리소스 유형**, **리소스 이름**, **Revision Back**을 입력합니다. 지정한 Revision으로 롤백할 수 있습니다.
 
 ![stage-guide-10](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-10_new.png)
 
-#### 배포 - Delete
+### 배포 - Delete
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 삭제할 수 있습니다.
 - **선택 방법**을 **동적인 방법으로 선택**으로 설정할 경우 **클러스터**와 **선택 전략**을 입력합니다.
@@ -158,7 +158,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
-#### 배포 - NHN Container Service
+### 배포 - NHN Container Service
 NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.  
 **NCS 앱키**를 입력하면 **NCS 역할**, 템플릿 리스트, 워크로드 리스트가 조회됩니다.  
 변경할 템플릿을 리스트에서 선택할 수 있습니다.  
@@ -167,7 +167,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 ![stage-guide-12](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-12_new.png)
 
 
-#### 배포 - Enable
+### 배포 - Enable
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 활성화할 수 있습니다.
     - 활성화: 해당 리소스를 Pipeline에서 관리하며, 리소스에 트래픽을 보내도록 설정합니다.
@@ -183,7 +183,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 ![stage-guide-13](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-13_new.png)
 
-#### 배포 - Disable
+### 배포 - Disable
 - **환경 설정**의 **배포 대상 설정**에서 추가한 [배포 대상](/Dev%20Tools/Pipeline/ko/environment-config/#_5)을 선택할 수 있습니다.
 - **Namespace**, **리소스 유형**, **선택 방법**, **리소스 이름**을 입력합니다. 해당 리소스를 비활성화할 수 있습니다.
     - 비활성화: 리소스를 삭제하지는 않지만, 더 이상 해당 리소스에 트래픽을 보내지 않도록 설정합니다.
@@ -199,10 +199,10 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 ![stage-guide-14](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-14_new.png)
 
-### 기능
+## 기능
 추가 기능을 제공하는 스테이지입니다.
 
-#### 기능 - 승인 관리
+### 기능 - 승인 관리
 **기능 - 승인 관리** 스테이지 이후의 스테이지들에 대한 **실행 관리(실행, 실행 중지)**를 승인권자가 관리할 수 있습니다.
 
 스테이지에 요청 내용에 대해 작성할 수 있으며, 승인 관리 스테이지의 **실행 관리(실행, 실행 중지)** 기능은 해당 프로젝트의 **Pipeline APPROVAL ADMIN** 역할을 가진 사용자만 할 수 있습니다.
@@ -213,7 +213,7 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2023-10-31/stage-guide-18.png)
 
-#### 기능 - Judgement(실행 관리)
+### 기능 - Judgement(실행 관리)
 필요에 따라 실행 관리 스테이지에 대한 **설명**, **실행 설정**값을 입력할 수 있습니다.
 
 **실행 설정**의 유무와 상관없이 다음 스테이지에 대한 **실행 관리(실행, 실행 중지)**를 할 수 있습니다.
@@ -221,25 +221,25 @@ NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.
 
 ![stage-guide-16](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-16_new.png)
 
-#### 기능 - Precondition(스테이지 상태 조건)
+### 기능 - Precondition(스테이지 상태 조건)
 이전 단계의 스테이지 이름과 실행 결과를 선택하여 조건을 설정할 수 있습니다.
 지정한 모든 조건이 충족되어야 다음 스테이지가 실행됩니다.
 
 ![stage-guide-17](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-17_new.png)
 
-#### 기능 - Precondition(실행 조건)
+### 기능 - Precondition(실행 조건)
 이전 단계로 설정된 Judgement(실행 관리) 스테이지에서 전달받은 값의 **실행 조건**에 따라 뒤의 스테이지들의 실행을 결정합니다.
 Judgement(실행 관리) 스테이지에서 전달받은 설정값과 **실행 조건**의 조건 값에 대해 **실행 조건 일치/실행 조건 불일치** 중 선택하여 이후 스테이지의 실행을 결정합니다.
 
 ![stage-guide-18](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-18_new.png)
 
-#### 기능 - Webhook
+### 기능 - Webhook
 **URL**에 HTTP 메서드와 URL을 입력합니다. 필요에 따라 **요청 헤더**와 **요청 데이터**를 추가할 수 있습니다.
 Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 하나라면 그 즉시 해당 스테이지를 종료합니다.
 
 ![stage-guide-19](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-19_new.png)
 
-#### 기능 - 타 파이프라인 실행
+### 기능 - 타 파이프라인 실행
 스테이지에서 다른 파이프라인 전체를 실행할 수 있습니다.
 실행하고자 하는 **파이프라인 이름**을 선택합니다.
 
@@ -247,7 +247,7 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 
 ![stage-guide-20](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-20_new.png)
 
-#### 기능 - NHN Cloud Deploy 서비스 배포 실행
+### 기능 - NHN Cloud Deploy 서비스 배포 실행
 스테이지에서 NHN Cloud Deploy 서비스를 사용하여 배포를 실행할 수 있습니다.
 - 배포를 실행하려는 아티팩트의 **Command Type**이 **SSH**인 경우 해당 **NHN Cloud Deploy 서비스 배포 실행** 기능을 지원하지 않으며, **Cloud Agent**인 경우에만 지원합니다. 관련된 내용은 [Deploy 사용 가이드](/Dev%20Tools/Deploy/ko/console-guide/#_8)를 참고하십시오.
 
@@ -272,7 +272,7 @@ Webhook의 응답값이 **Fail Fast HTTP 상태 코드**에 입력한 값 중 �
 
 ![stage-guide-21](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-21_new.png)
 
-#### 기능 - 변수 생성
+### 기능 - 변수 생성
 파이프라인 내에서 이후 스테이지에서 재사용할 변수를 정의합니다. 이 스테이지에서 만든 변수는 연결된 모든 후속 스테이지에서 사용할 수 있습니다.
 이 스테이지에서는 변수를 최대 5개까지 생성할 수 있습니다.
 
@@ -298,7 +298,7 @@ ${myImage}
 
 ![stage-guide-22](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-22.png)
 
-#### 기능 - 이미지 취약점 분석
+### 기능 - 이미지 취약점 분석
 이미지를 대상으로 취약점 분석을 수행하는 스테이지입니다.
 
 - 이미지 저장소
@@ -311,7 +311,7 @@ ${myImage}
 
 ![stage-guide-24](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-24.png)
 
-#### 기능 - 소스 코드 취약점 분석
+### 기능 - 소스 코드 취약점 분석
 
 소스 코드를 대상으로 취약점 분석을 수행하는 스테이지입니다.
 
@@ -325,8 +325,8 @@ ${myImage}
 
 ![stage-guide-26](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/stage-guide-26.png)
 
-### 스테이지 공통 기능
-#### 스테이지 실패 시
+## 스테이지 공통 기능
+### 스테이지 실패 시
 
 스테이지가 실패했을 때 파이프라인 실행에 관련된 설정을 선택할 수 있습니다.
 
