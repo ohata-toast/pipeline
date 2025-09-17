@@ -421,7 +421,7 @@ Blue/Green 배포를 위한 파이프라인을 구성할 수 있습니다. Blue/
 
 ![template-guide-15](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2025-09-23/template-guide-15.png)
 
-이미지를 대상으로 **취약점 분석** 후 배포를 진행하는 시나리오입니다.
+이미지를 대상으로 취약점 분석 후 배포를 진행하는 시나리오입니다.
 **이미지 저장소** 유형으로 **자동 실행** 되었을 때의 이미지 정보를 **변수**로 사용할 수 있습니다.
 
 변수를 생성하고 사용하는 방법은 [기능 - 사용자 변수 제공 가이드](/Dev%20Tools/Pipeline/ko/stage-guide/#-_2)에서 확인할 수 있습니다.
