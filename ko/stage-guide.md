@@ -158,7 +158,7 @@ Kubernetes 환경에 배포를 하는 스테이지입니다.
 
 ![stage-guide-11](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-11_new.png)
 
-### 배포 - NHN Container Service
+### 배포 - NHN Container Service(NCS)
 NCS 워크로드의 템플릿을 교체할 수 있는 스테이지입니다.  
 **NCS 앱키**를 입력하면 **NCS 역할**, 템플릿 리스트, 워크로드 리스트가 조회됩니다.  
 변경할 템플릿을 리스트에서 선택할 수 있습니다.  
