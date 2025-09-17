@@ -38,7 +38,7 @@
 
 ![stage-guide-04](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_pipeline/2024-08-27/pipeline-stage-guide/stage-guide-04_new.png)
 
-### 빌드 - Bake (Manifest)
+### 빌드 - Bake(Manifest)
 사용자가 직접 구성한 Helm package file 또는 [차트 저장소](/Dev%20Tools/Pipeline/ko/environment-config/#_6)를 이용하여 빌드할 수 있습니다.
 
 - 차트 이름은 Helm 엔진으로 구성한 결과물의 이름을 설정합니다.
